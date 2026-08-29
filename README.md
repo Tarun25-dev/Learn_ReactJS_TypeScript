@@ -44,9 +44,11 @@
     console.log("Runs Once");
     ), []);
    ```
-
- - With dependencies - when those values change
-
+   ```tsx
+    useEffect(() => {
+       console.log("Runs when count changes");
+    ), [count]);
+   ```
    
 - useRef
 - useContext
