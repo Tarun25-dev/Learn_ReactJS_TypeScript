@@ -37,6 +37,19 @@
    - It has Two parts:
    - [1]. () => {} the effect function
    - [2]. [dependencies] tells react when to run the effect.
+  - Three common forms in useEffect:
+  - Empty dependency array - Once after initial render
+    ```tsx
+    useEffect(() => {
+    console.log("Runs Once");
+    ), []);
+   ```- With dependencies - when those values change
+
+   ```tsx
+    useEffect(() => {
+       console.log("Runs when count changes");
+    ), [count]);
+   ```
    
 - useRef
 - useContext
