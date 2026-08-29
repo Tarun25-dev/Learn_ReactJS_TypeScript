@@ -22,7 +22,19 @@
       );
     }
     ```
-- **useEffect**
+- **useEffect** : useEffect is used to perform side effects in a components, A side effect is a something that happens outside the normal process of calculating and displaying JSX, such as:
+  - Fetching data from an API
+  - updating document.title
+  - using LocalStorage
+  - setting timers
+  - Adding Event listeners
+ - Basic Syntax:
+   ```tsx
+   useEffect(() => {
+   // side effect code
+   ), [dependencies array]);
+   ```
+   - It has two parts: [1]. () => {} the effect function [2]. [dependencies] tells react when to run the effect.
 - useRef
 - useContext
 - useReducer
