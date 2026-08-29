@@ -34,7 +34,9 @@
    // side effect code
    ), [dependencies array]);
    ```
-   - It has two parts: [1]. () => {} the effect function [2]. [dependencies] tells react when to run the effect.
+   - It has Two parts:
+   [1]. () => {} the effect function
+   [2]. [dependencies] tells react when to run the effect.
 - useRef
 - useContext
 - useReducer
