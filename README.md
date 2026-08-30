@@ -56,7 +56,10 @@
        console.log("Runs when count changes");
     });
     ```
-- useRef
+- **useRef** : useRef let's you to store a value that persists between renders without causing re-render when the value changes.
+
+
+
 - useContext
 - useReducer
 - useMemo
