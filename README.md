@@ -57,6 +57,33 @@
     });
     ```
 - **useRef** : useRef let's you to store a value that persists between renders without causing re-render when the value changes.
+  - Commonly used for:
+  - Accessing DOM elements directly.
+  - Stroing values that should persist between renders.
+  - Keeping a Prvious Value.
+  - Managing timers/intervals
+ - **Syntax:**
+   ```tsx
+   const ref = useRef(initialValue);
+   ```
+   - You access the stored value using ref.current
+ - **Example1: Access DOM Element (input)**
+   ``tsx
+   import {useRef} from "react";
+   function App(){
+        const inputRef = useRef<HTMLInputElement>(null);
+        const handleClick = () => {
+             inputRef.current?.focus();
+        }
+        return(
+            <div>
+            <input ref={inputRef} type="text" />
+            <button onClick={handleClick}>Focus</button>
+           </div>
+         );
+     }
+   ```
+   
 
 
 
