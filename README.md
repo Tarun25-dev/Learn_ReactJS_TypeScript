@@ -68,7 +68,8 @@
    ```
    - You access the stored value using ref.current
  - **Example1: Access DOM Element (input)**
-   ``tsx
+
+```tsx
    import {useRef} from "react";
    function App(){
         const inputRef = useRef<HTMLInputElement>(null);
