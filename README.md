@@ -84,8 +84,16 @@
          );
      }
    ```
-   
-
+  - **Example2: Store a value without re-rendering**
+```tsx
+function App(){
+   const countRef = useRef(0);
+   const handleClick = () => { countRef.current += 1; console.log(countRef.current) };
+   return(
+      <button onClick={handleClick}>Increase</button>
+   );
+ }
+```   
 
 
 - useContext
