@@ -1,5 +1,22 @@
 # Hooks:
 
+## What is Hook?
+- A hook is a special function that lets a functional component use react features.
+
+## Rules of Hook:
+[1]. **Only call hooks at the top level**
+- Don't call hooks inside:
+- Loops(for, while)
+- Conditions(if, while, ternaries)
+- Nested functions
+- try/catch/finally
+
+[2]. **Only call hooks from react functions(components)**
+- Hooks can only be called from:
+- Function Components
+- Custom Hooks(function whose names start with `use`)
+
+## Types of hook features
 - **useState** : useState lets a functional component store and update data(state), when the state changes React automatically re-renders the component so the UI stays in sync.
  - Basic Syntax:
    ```tsx
