@@ -132,3 +132,19 @@ import tailwindcss from "@tailwindcss/vite";
 
 plugins: [react(), tailwindcss()]
 ```
+### Step3: Add tailwind to your css
+- Open index.css file and remove its existing content and put:
+```code
+@import "tailwindcss";
+```
+- No need to write like this
+```code
+@tailwindcss base;
+@tailwindcss components;
+@tailwindcss utilities;
+```
+- For the V4 setup no need to write like that.
+- Make sure index.css file import in main.tsx like:
+```code
+import "./index.css";
+```
