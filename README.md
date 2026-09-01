@@ -4,6 +4,7 @@
 - A hook is a special function that lets a functional component use react features.
 
 ## Rules of Hook:
+
 [1]. **Only call hooks at the top level**
 - Don't call hooks inside:
 - Loops(for, while)
