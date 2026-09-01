@@ -125,3 +125,10 @@ function App(){
 ```code
 npm install tailwindcss @tailwindcss/vite
 ```
+### Step2: Configure Vite
+- Open your vite.config.ts file and import tailwindcss and add plugin
+```code
+import tailwindcss from "@tailwindcss/vite";
+
+plugins: [react(), tailwindcss()]
+```
