@@ -118,7 +118,7 @@ function App(){
 - useReducer
 - useMemo
 
-## Installation of Tailwind for React + vite
+## Setup Tailwind for React + vite
 
 ### Step1: Install TailwindCSS
 - Open the terminal inside your existing React project folder and run:
@@ -147,4 +147,12 @@ plugins: [react(), tailwindcss()]
 - Make sure index.css file import in main.tsx like:
 ```code
 import "./index.css";
+```
+
+## Setup fontawesome
+
+### Step1 : install Font Awesome
+- Open the terminal inside your existing React project folder and run:
+```code
+npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
 ```
