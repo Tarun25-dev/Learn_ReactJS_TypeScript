@@ -118,9 +118,9 @@ function App(){
 - useReducer
 - useMemo
 
-# Installation of Tailwind for React + vite
+## Installation of Tailwind for React + vite
 
-## Step1: Install TailwindCSS
+### Step1: Install TailwindCSS
 - Open the terminal inside your existing React project folder and run:
 ```code
 npm install tailwindcss @tailwindcss/vite
