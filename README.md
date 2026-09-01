@@ -151,8 +151,24 @@ import "./index.css";
 
 ## Setup fontawesome
 
-### Step1 : install Font Awesome
+### Step1 : Install Font Awesome
 - Open the terminal inside your existing React project folder and run:
 ```code
-npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
+npm install
+@fortawesome/fontawesome-svg-core
+@fortawesome/free-solid-svg-icons
+@fortawesome/react-fontawesome
 ```
+- `@fortawesome/fontawesome-svg-core` is for Font Awesome core.
+- `@fortawesome/free-solid-svg-icons` is for solid svg icons.
+- `@fortawesome/react-fontawesome` for react component.
+- Import like:
+```tsx
+import{FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faHouse} from "@fortawesome/free-solid-svg-icons";
+
+<FontAwesomeIcon icon = {faHouse} />
+```
+
+- 
+
