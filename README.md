@@ -114,7 +114,16 @@ function App(){
 ```   
 
 
-- **useContext** : 
+- **useContext** : useContext is used to share data between components without passing props manually through every level.
+- **Problem:** Prop drilling
+- Imagine this component structure:
+```text
+App
+ |_____Parent
+       |_____Child
+             |______GrandChild
+```
+
 
 
 
