@@ -123,10 +123,39 @@ App
        |_____Child
              |______GrandChild
 ```
+- Suppose App has a username, but GrandChild needs it.
+- Without Context, you would pass props through every compoent:
+```tsx
+<App username="Tharun">
+        |
+<Parent username={username}>
+        |
+<Child username={username}>
+        |
+<GrandChild username={username}>
+```
+- This is called Prop Drilling.
+- **Solution**: useContext allows a component to access shared data directly.
+- Step1: Create Context `export const UserContext = CreateContext();`
+- Step2: Provide the context:
+```tsx
+const username = "Tharun";
 
+<UserContext.Provider value={username}>
+   <Parent />
+</UserContext.Provider>
+```
+- The provider makes username available to all nested components like Parent or Child or GrandChild anyone can use it through useContext.
 
-
-
+- Step3: Consume Context using useContext `const username = useContext(UserContext);`
+- Now GrandChild gets the value directly.
+- **UseCases:**
+- Dark/Light Theme
+- Logged-in User information
+- Language settings
+- Shopping cart
+- Authentication state
+- Simply, useContext is used to access globally shared data in React components without manually passing props through intermediate components.
 
 
 
