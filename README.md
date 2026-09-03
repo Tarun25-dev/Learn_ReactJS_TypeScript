@@ -226,5 +226,3 @@ import {faHouse} from "@fortawesome/free-solid-svg-icons";
 <FontAwesomeIcon icon = {faHouse} />
 ```
 
-- 
-
