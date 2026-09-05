@@ -157,21 +157,52 @@ const username = "Tharun";
 - Authentication state
 - Simply, useContext is used to access globally shared data in React components without manually passing props through intermediate components.
 
+- **useReducer** : useReducer used to manage complex state  logic.
+- It is similar to useState, but instead of directly updating state, you dipatch an action, and a reducer function decides how to update the state.
+- **Syntax**
+```tsx
+const [state, dispatch] = useReducer(reducer, initialState);
+```
+- state -> current state
+- dispatch -> sends an action
+- reducer -> function that updates the state
+- initialState -> starting state or value
+- **Example:** Counter
+```tsx
+import {useReducer} from "react";
+type Action = {
+  type: "increment" | "decrement" | "reset";
+};
+
+function reducer(state: number, action: Action){
+   switch(action.type){
+      case "increment":
+          return state + 1;
+      case "decrement":
+          return state - 1;
+      case "reset":
+          return 0;
+      default:
+          return state;
+   }
+}
+
+function Counter(){
+const [count, dispatch] = useReducer(reducer, 0);
+return(
+  <div>
+   <h1>{count}</h1>
+   <button onClick={() => dispatch({type: "increment"})}>+</button>
+   <button onClick={() => dispatch({type: "decrement"})}>-</button>
+   <button onClick={() => dispatch({type: "reset"})}>Reset</button>
+   </div>
+```
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-- useReducer
 - useMemo
 
 ## Setup Tailwind for React + vite
