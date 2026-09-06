@@ -198,12 +198,9 @@ return(
    </div>
 ```
 
+# Performance optimization Hooks:
 
-
-
-
-
-- useMemo
+- **useMemo** :
 
 ## Setup Tailwind for React + vite
 
