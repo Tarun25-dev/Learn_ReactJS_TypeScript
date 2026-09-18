@@ -200,7 +200,7 @@ return(
 
 # Performance optimization Hooks:
 
-- **useMemo** :
+- **useMemo** : useMemo is 
 
 ## Setup Tailwind for React + vite
 
