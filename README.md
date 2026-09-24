@@ -202,6 +202,11 @@ return(
 
 - **useMemo** : useMemo is 
 
+# React Routes
+
+## What is Route?
+
+
 ## Setup Tailwind for React + vite
 
 ### Step1: Install TailwindCSS
