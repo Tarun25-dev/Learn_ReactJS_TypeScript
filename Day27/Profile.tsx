@@ -1,15 +1,14 @@
-import { UserContext } from "./useContext";
+import { UserContextObj } from "./UserContextData";
 import { useContext } from "react";
 
 function Profile(){
-    const ProfileName = useContext(UserContext);
+    const profile = useContext(UserContextObj);
     return(
-        <>
-        <section>
-            <h1>Profile Page</h1>
-            <p>Name: {ProfileName}</p>
-        </section>
-        </>
+        <div>
+            <h1>Profile section</h1>
+            <p>Name: {profile.name}</p>
+            <p>Role: {profile.role}</p>
+        </div>
     );
 }
 

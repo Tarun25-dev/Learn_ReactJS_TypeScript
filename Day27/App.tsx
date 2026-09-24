@@ -1,15 +1,11 @@
-import { UserContext } from "./useContext";
-import Navbar from "./Navbar";
-import Profile from "./Profile";
+import Profile from "../Example27/Profile";
+import { UserContextObj } from "./UserContextData";
 
 function App(){
     return(
-        
-        <UserContext.Provider value="Tharun Kumar">
-            <Navbar />
+        <UserContextObj.Provider value={{name:"Tharun",role:"React Developer"}}>
             <Profile />
-        </UserContext.Provider>
-        
+        </UserContextObj.Provider>
     );
 }
 
