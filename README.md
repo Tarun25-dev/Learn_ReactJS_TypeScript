@@ -200,7 +200,7 @@ return(
 
 # Performance optimization Hooks:
 
-- **useMemo** : useMemo is 
+- **useMemo** : useMemo is react hook
 
 # React Routes
 
@@ -258,4 +258,3 @@ import {faHouse} from "@fortawesome/free-solid-svg-icons";
 
 <FontAwesomeIcon icon = {faHouse} />
 ```
-
