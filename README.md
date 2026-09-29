@@ -1,4 +1,3 @@
-# Tsx:
 
 # Hooks:
 
