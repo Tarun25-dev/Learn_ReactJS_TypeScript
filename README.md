@@ -1,3 +1,6 @@
+# Tsx:
+- Tsx is a programming language.
+
 # Hooks:
 
 ## What is Hook?
@@ -205,6 +208,8 @@ return(
 # React Routes
 
 ## What is Route?
+
+
 
 
 ## Setup Tailwind for React + vite
