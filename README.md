@@ -1,5 +1,4 @@
 # Tsx:
-- Tsx is a programming language.
 
 # Hooks:
 
