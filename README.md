@@ -1,6 +1,12 @@
 # what is React?
 React is a javascript frontend library for building a User Interfaces, especially for web applications. Which is fast, interactive and reusable UI components.
 
+### Key features:
+- Components
+- virtual DOM
+- state and props
+- declarative UI
+
 # Hooks:
 
 ## What is Hook?
