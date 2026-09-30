@@ -1,5 +1,5 @@
 # what is React?
-React is a javascript frontend library used to build a effective and responsive websites.
+React is a javascript frontend library for building a User Interfaces, especially for web applications. Which is fast, interactive and reusable UI components.
 
 # Hooks:
 
