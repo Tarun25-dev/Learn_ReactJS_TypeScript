@@ -1,3 +1,5 @@
+# what is React?
+React is a javascript frontend library used to build a effective and responsive websites.
 
 # Hooks:
 
