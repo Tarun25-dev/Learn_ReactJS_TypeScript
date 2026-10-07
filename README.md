@@ -295,7 +295,7 @@ function ProductList({ products }) {
 ## What is a Route?
 A route is a path in a web app that maps to a specific page or component.
 
-# Setup Tailwind for React + Vite
+## Setup Tailwind for React + Vite
 
 ### Step 1: Install Tailwind CSS
 Open the terminal inside your project folder and run:
@@ -331,7 +331,7 @@ Make sure `index.css` is imported in `main.tsx`:
 import "./index.css";
 ```
 
-# Setup Font Awesome
+## Setup Font Awesome
 
 ### Step 1: Install Font Awesome
 Open the terminal inside your project folder and run:
