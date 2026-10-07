@@ -28,13 +28,13 @@ React is a javascript frontend library for building a User Interfaces, especiall
 
 ## Types of hook features
 - **useState** : useState lets a functional component store and update data(state), when the state changes React automatically re-renders the component so the UI stays in sync.
- - Basic Syntax:
-   ```tsx
-   const [state, setState] = useState(initialValue);
-   ```
-   - state -> the current value.
-   - setState -> a function used to update the value.
-   - initialValue -> the starting value of the state.
+  - Basic Syntax:
+    ```tsx
+    const [state, setState] = useState(initialValue);
+    ```
+    - state -> the current value.
+    - setState -> a function used to update the value.
+    - initialValue -> the starting value of the state.
 
   - Eaxmple: Counter
     ```tsx
@@ -55,27 +55,27 @@ React is a javascript frontend library for building a User Interfaces, especiall
   - using LocalStorage
   - setting timers
   - Adding Event listeners
- - Basic Syntax:
-   ```tsx
-   useEffect(() => {
-   // side effect code
-   ), [dependencies array]);
-   ```
-   - It has Two parts:
-   - [1]. () => {} the effect function
-   - [2]. [dependencies] tells react when to run the effect.
+  - Basic Syntax:
+    ```tsx
+    useEffect(() => {
+    // side effect code
+    }, [dependencies array]);
+    ```
+    - It has Two parts:
+    - [1]. () => {} the effect function
+    - [2]. [dependencies] tells react when to run the effect.
   - Three common forms in useEffect:
   - 1.Empty dependency array - Once after initial render
     ```tsx
     useEffect(() => {
     console.log("Runs Once");
     }, []);
-   ```
-   ```tsx
+    ```
+    ```tsx
     useEffect(() => {
        console.log("Runs when count changes");
     }, [count]);
-   ```
+    ```
   - 2.With dependencies - when those values change
   - 3. No dependency array - after every render
     ```tsx
@@ -89,28 +89,28 @@ React is a javascript frontend library for building a User Interfaces, especiall
   - Stroing values that should persist between renders.
   - Keeping a Prvious Value.
   - Managing timers/intervals
- - **Syntax:**
-   ```tsx
-   const ref = useRef(initialValue);
-   ```
-   - You access the stored value using ref.current
- - **Example1: Access DOM Element (input)**
+  - **Syntax:**
+    ```tsx
+    const ref = useRef(initialValue);
+    ```
+    - You access the stored value using ref.current
+  - **Example1: Access DOM Element (input)**
 
 ```tsx
-   import {useRef} from "react";
-   function App(){
-        const inputRef = useRef<HTMLInputElement>(null);
-        const handleClick = () => {
-             inputRef.current?.focus();
-        }
-        return(
-            <div>
-            <input ref={inputRef} type="text" />
-            <button onClick={handleClick}>Focus</button>
-           </div>
-         );
-     }
-   ```
+    import {useRef} from "react";
+    function App(){
+         const inputRef = useRef<HTMLInputElement>(null);
+         const handleClick = () => {
+              inputRef.current?.focus();
+         }
+         return(
+             <div>
+             <input ref={inputRef} type="text" />
+             <button onClick={handleClick}>Focus</button>
+            </div>
+          );
+      }
+    ```
   - **Example2: Store a value without re-rendering**
 ```tsx
 function App(){
@@ -129,8 +129,8 @@ function App(){
 ```text
 App
  |_____Parent
-       |_____Child
-             |______GrandChild
+        |_____Child
+              |______GrandChild
 ```
 - Suppose App has a username, but GrandChild needs it.
 - Without Context, you would pass props through every compoent:
@@ -205,11 +205,39 @@ return(
    <button onClick={() => dispatch({type: "decrement"})}>-</button>
    <button onClick={() => dispatch({type: "reset"})}>Reset</button>
    </div>
+ );
+}
 ```
 
 # Performance optimization Hooks:
 
-- **useMemo** : useMemo is react hook
+- **useMemo** : useMemo is a React Hook used to memoize the result of a calculation and avoid recomputing it on every render.
+- It is useful when a calculation is expensive and depends on certain values.
+- **Syntax:**
+```tsx
+const memoizedValue = useMemo(() => {
+  return expensiveCalculation(data);
+}, [data]);
+```
+- The callback runs only when one of the dependencies changes.
+- If the dependencies stay the same, React reuses the previous computed value.
+- **Example:** Filtering a large list
+```tsx
+import { useMemo, useState } from "react";
+
+function ProductList({ products }) {
+  const [search, setSearch] = useState("");
+
+  const filteredProducts = useMemo(() => {
+    return products.filter((product) =>
+      product.name.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [products, search]);
+
+  return <div>{filteredProducts.length} items</div>;
+}
+```
+- Use useMemo when the calculation is expensive, but avoid using it for every small value because it can add unnecessary complexity.
 
 # React Routes
 
