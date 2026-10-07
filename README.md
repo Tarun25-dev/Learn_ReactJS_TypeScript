@@ -1,227 +1,277 @@
-# what is React?
-React is a javascript frontend library for building a User Interfaces, especially for web applications. Which is fast, interactive and reusable UI components.
+# What is React?
+React is a JavaScript frontend library for building user interfaces, especially for web applications. It is fast, interactive, and supports reusable UI components.
 
 ### Key features:
 - Components
-- virtual DOM
-- state and props
-- declarative UI
+- Virtual DOM
+- State and props
+- Declarative UI
 
-# Hooks:
+# Hooks
 
-## What is Hook?
-- A hook is a special function that lets a functional component use react features.
+## What is a Hook?
+A hook is a special function that lets a functional component use React features.
 
-## Rules of Hook:
+## Rules of Hooks
 
-[1]. **Only call hooks at the top level**
-- Don't call hooks inside:
-- Loops(for, while)
-- Conditions(if, while, ternaries)
+### 1. Only call hooks at the top level
+Do not call hooks inside:
+- Loops (`for`, `while`)
+- Conditions (`if`, ternary)
 - Nested functions
-- try/catch/finally
+- `try/catch/finally`
 
-[2]. **Only call hooks from react functions(components)**
-- Hooks can only be called from:
-- Function Components
-- Custom Hooks(function whose names start with `use`)
+### 2. Only call hooks from React functions
+Hooks can only be called from:
+- Function components
+- Custom hooks (function names start with `use`)
 
-## Types of hook features
-- **useState** : useState lets a functional component store and update data(state), when the state changes React automatically re-renders the component so the UI stays in sync.
-  - Basic Syntax:
-    ```tsx
-    const [state, setState] = useState(initialValue);
-    ```
-    - state -> the current value.
-    - setState -> a function used to update the value.
-    - initialValue -> the starting value of the state.
+## Types of Hook Features
 
-  - Eaxmple: Counter
-    ```tsx
-    import {useState} from "react";
-    function Counter(){
-    const [count, setCount] = useState(0);
-    return(
-        <div>
-           <p>Count: {count}</p>
-           <button onClick = {() => setCount(count + 1)}>Increase</button>
-       </div>
-      );
-    }
-    ```
-- **useEffect** : useEffect is used to perform side effects in a components, A side effect is a something that happens outside the normal process of calculating and displaying JSX, such as:
-  - Fetching data from an API
-  - updating document.title
-  - using LocalStorage
-  - setting timers
-  - Adding Event listeners
-  - Basic Syntax:
-    ```tsx
-    useEffect(() => {
-    // side effect code
-    }, [dependencies array]);
-    ```
-    - It has Two parts:
-    - [1]. () => {} the effect function
-    - [2]. [dependencies] tells react when to run the effect.
-  - Three common forms in useEffect:
-  - 1.Empty dependency array - Once after initial render
-    ```tsx
-    useEffect(() => {
-    console.log("Runs Once");
-    }, []);
-    ```
-    ```tsx
-    useEffect(() => {
-       console.log("Runs when count changes");
-    }, [count]);
-    ```
-  - 2.With dependencies - when those values change
-  - 3. No dependency array - after every render
-    ```tsx
-    useEffect(() => {
-       console.log("Runs when count changes");
-    });
-    ```
-- **useRef** : useRef let's you to store a value that persists between renders without causing re-render when the value changes.
-  - Commonly used for:
-  - Accessing DOM elements directly.
-  - Stroing values that should persist between renders.
-  - Keeping a Prvious Value.
-  - Managing timers/intervals
-  - **Syntax:**
-    ```tsx
-    const ref = useRef(initialValue);
-    ```
-    - You access the stored value using ref.current
-  - **Example1: Access DOM Element (input)**
+### `useState`
+`useState` lets a functional component store and update data (state). When the state changes, React automatically re-renders the component so the UI stays in sync.
 
+- Basic Syntax:
 ```tsx
-    import {useRef} from "react";
-    function App(){
-         const inputRef = useRef<HTMLInputElement>(null);
-         const handleClick = () => {
-              inputRef.current?.focus();
-         }
-         return(
-             <div>
-             <input ref={inputRef} type="text" />
-             <button onClick={handleClick}>Focus</button>
-            </div>
-          );
-      }
-    ```
-  - **Example2: Store a value without re-rendering**
+const [state, setState] = useState(initialValue);
+```
+
+- `state` -> current value
+- `setState` -> function used to update the value
+- `initialValue` -> starting value of the state
+
+- Example: Counter
 ```tsx
-function App(){
-   const countRef = useRef(0);
-   const handleClick = () => { countRef.current += 1; console.log(countRef.current) };
-   return(
-      <button onClick={handleClick}>Increase</button>
-   );
- }
-```   
+import { useState } from "react";
 
+function Counter() {
+  const [count, setCount] = useState(0);
 
-- **useContext** : useContext is used to share data between components without passing props manually through every level.
-- **Problem:** Prop drilling
-- Imagine this component structure:
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
+}
+```
+
+### `useEffect`
+`useEffect` is used to perform side effects in a component. A side effect is something that happens outside the normal process of calculating and displaying JSX, such as:
+- Fetching data from an API
+- Updating `document.title`
+- Using `localStorage`
+- Setting timers
+- Adding event listeners
+
+- Basic Syntax:
+```tsx
+useEffect(() => {
+  // side effect code
+}, [dependencies]);
+```
+
+- It has two parts:
+  - `() => {}` -> effect function
+  - `[dependencies]` -> tells React when to run the effect
+
+- Common forms:
+  - Empty dependency array: runs once after initial render
+```tsx
+useEffect(() => {
+  console.log("Runs once");
+}, []);
+```
+
+  - With dependencies: runs when values change
+```tsx
+useEffect(() => {
+  console.log("Runs when count changes");
+}, [count]);
+```
+
+  - No dependency array: runs after every render
+```tsx
+useEffect(() => {
+  console.log("Runs after every render");
+});
+```
+
+### `useRef`
+`useRef` lets you store a value that persists between renders without causing a re-render when the value changes.
+
+Common uses:
+- Accessing DOM elements directly
+- Storing values that should persist between renders
+- Keeping a previous value
+- Managing timers and intervals
+
+- Syntax:
+```tsx
+const ref = useRef(initialValue);
+```
+
+- You access the stored value using `ref.current`.
+
+- Example 1: Access DOM element
+```tsx
+import { useRef } from "react";
+
+function App() {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleClick = () => {
+    inputRef.current?.focus();
+  };
+
+  return (
+    <div>
+      <input ref={inputRef} type="text" />
+      <button onClick={handleClick}>Focus</button>
+    </div>
+  );
+}
+```
+
+- Example 2: Store a value without re-rendering
+```tsx
+function App() {
+  const countRef = useRef(0);
+
+  const handleClick = () => {
+    countRef.current += 1;
+    console.log(countRef.current);
+  };
+
+  return <button onClick={handleClick}>Increase</button>;
+}
+```
+
+### `useContext`
+`useContext` is used to share data between components without passing props manually through every level.
+
+#### Problem: Prop drilling
+Imagine this component structure:
 ```text
 App
- |_____Parent
-        |_____Child
-              |______GrandChild
+|_____ Parent
+      |_____ Child
+            |______ GrandChild
 ```
-- Suppose App has a username, but GrandChild needs it.
-- Without Context, you would pass props through every compoent:
+
+If `App` has a username and `GrandChild` needs it, you would have to pass it through every component.
+
 ```tsx
 <App username="Tharun">
-        |
-<Parent username={username}>
-        |
-<Child username={username}>
-        |
-<GrandChild username={username}>
+  <Parent username={username}>
+    <Child username={username}>
+      <GrandChild username={username} />
+    </Child>
+  </Parent>
+</App>
 ```
-- This is called Prop Drilling.
-- **Solution**: useContext allows a component to access shared data directly.
-- Step1: Create Context `export const UserContext = CreateContext();`
-- Step2: Provide the context:
+
+This is called prop drilling.
+
+#### Solution: `useContext`
+Step 1: Create context
+```tsx
+export const UserContext = createContext();
+```
+
+Step 2: Provide the context
 ```tsx
 const username = "Tharun";
 
 <UserContext.Provider value={username}>
-   <Parent />
+  <Parent />
 </UserContext.Provider>
 ```
-- The provider makes username available to all nested components like Parent or Child or GrandChild anyone can use it through useContext.
 
-- Step3: Consume Context using useContext `const username = useContext(UserContext);`
-- Now GrandChild gets the value directly.
-- **UseCases:**
-- Dark/Light Theme
-- Logged-in User information
+Step 3: Consume the context
+```tsx
+const username = useContext(UserContext);
+```
+
+Now `GrandChild` can access the value directly.
+
+#### Use cases:
+- Dark/light theme
+- Logged-in user information
 - Language settings
 - Shopping cart
 - Authentication state
-- Simply, useContext is used to access globally shared data in React components without manually passing props through intermediate components.
 
-- **useReducer** : useReducer used to manage complex state  logic.
-- It is similar to useState, but instead of directly updating state, you dipatch an action, and a reducer function decides how to update the state.
-- **Syntax**
+In short, `useContext` is used to access globally shared data without manually passing props through many intermediate components.
+
+### `useReducer`
+`useReducer` is used to manage complex state logic.
+
+It is similar to `useState`, but instead of directly updating state, you dispatch an action and a reducer function decides how to update the state.
+
+- Syntax:
 ```tsx
 const [state, dispatch] = useReducer(reducer, initialState);
 ```
-- state -> current state
-- dispatch -> sends an action
-- reducer -> function that updates the state
-- initialState -> starting state or value
-- **Example:** Counter
+
+- `state` -> current state
+- `dispatch` -> sends an action
+- `reducer` -> function that updates the state
+- `initialState` -> starting value
+
+- Example: Counter
 ```tsx
-import {useReducer} from "react";
+import { useReducer } from "react";
+
 type Action = {
   type: "increment" | "decrement" | "reset";
 };
 
-function reducer(state: number, action: Action){
-   switch(action.type){
-      case "increment":
-          return state + 1;
-      case "decrement":
-          return state - 1;
-      case "reset":
-          return 0;
-      default:
-          return state;
-   }
+function reducer(state: number, action: Action) {
+  switch (action.type) {
+    case "increment":
+      return state + 1;
+    case "decrement":
+      return state - 1;
+    case "reset":
+      return 0;
+    default:
+      return state;
+  }
 }
 
-function Counter(){
-const [count, dispatch] = useReducer(reducer, 0);
-return(
-  <div>
-   <h1>{count}</h1>
-   <button onClick={() => dispatch({type: "increment"})}>+</button>
-   <button onClick={() => dispatch({type: "decrement"})}>-</button>
-   <button onClick={() => dispatch({type: "reset"})}>Reset</button>
-   </div>
- );
+function Counter() {
+  const [count, dispatch] = useReducer(reducer, 0);
+
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={() => dispatch({ type: "increment" })}>+</button>
+      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+      <button onClick={() => dispatch({ type: "reset" })}>Reset</button>
+    </div>
+  );
 }
 ```
 
-# Performance optimization Hooks:
+# Performance Optimization Hooks
 
-- **useMemo** : useMemo is a React Hook used to memoize the result of a calculation and avoid recomputing it on every render.
-- It is useful when a calculation is expensive and depends on certain values.
-- **Syntax:**
+### `useMemo`
+`useMemo` is a React Hook used to memoize the result of a calculation and avoid recomputing it on every render.
+
+It is useful when a calculation is expensive and depends on certain values.
+
+- Syntax:
 ```tsx
 const memoizedValue = useMemo(() => {
   return expensiveCalculation(data);
 }, [data]);
 ```
+
 - The callback runs only when one of the dependencies changes.
 - If the dependencies stay the same, React reuses the previous computed value.
-- **Example:** Filtering a large list
+
+- Example: Filtering a large list
 ```tsx
 import { useMemo, useState } from "react";
 
@@ -237,63 +287,69 @@ function ProductList({ products }) {
   return <div>{filteredProducts.length} items</div>;
 }
 ```
-- Use useMemo when the calculation is expensive, but avoid using it for every small value because it can add unnecessary complexity.
+
+- Use `useMemo` when the calculation is expensive, but avoid using it for every small value because it can add unnecessary complexity.
 
 # React Routes
 
-## What is Route?
+## What is a Route?
+A route is a path in a web app that maps to a specific page or component.
 
+# Setup Tailwind for React + Vite
 
-
-
-## Setup Tailwind for React + vite
-
-### Step1: Install TailwindCSS
-- Open the terminal inside your existing React project folder and run:
-```code
+### Step 1: Install Tailwind CSS
+Open the terminal inside your project folder and run:
+```bash
 npm install tailwindcss @tailwindcss/vite
 ```
-### Step2: Configure Vite
-- Open your vite.config.ts file and import tailwindcss and add plugin
-```code
+
+### Step 2: Configure Vite
+Open `vite.config.ts` and import Tailwind CSS and add the plugin:
+```tsx
 import tailwindcss from "@tailwindcss/vite";
 
 plugins: [react(), tailwindcss()]
 ```
-### Step3: Add tailwind to your css
-- Open index.css file and remove its existing content and put:
-```code
+
+### Step 3: Add Tailwind to your CSS
+Open `index.css` and replace its content with:
+```css
 @import "tailwindcss";
 ```
-- No need to write like this
-```code
-@tailwindcss base;
-@tailwindcss components;
-@tailwindcss utilities;
+
+No need to write:
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
-- For the V4 setup no need to write like that.
-- Make sure index.css file import in main.tsx like:
-```code
+
+For V4 setup, this is enough.
+
+Make sure `index.css` is imported in `main.tsx`:
+```tsx
 import "./index.css";
 ```
 
-## Setup fontawesome
+# Setup Font Awesome
 
-### Step1 : Install Font Awesome
-- Open the terminal inside your existing React project folder and run:
-```code
-npm install
-@fortawesome/fontawesome-svg-core
-@fortawesome/free-solid-svg-icons
-@fortawesome/react-fontawesome
+### Step 1: Install Font Awesome
+Open the terminal inside your project folder and run:
+```bash
+npm install \
+  @fortawesome/fontawesome-svg-core \
+  @fortawesome/free-solid-svg-icons \
+  @fortawesome/react-fontawesome
 ```
-- `@fortawesome/fontawesome-svg-core` is for Font Awesome core.
-- `@fortawesome/free-solid-svg-icons` is for solid svg icons.
-- `@fortawesome/react-fontawesome` for react component.
-- Import like:
-```tsx
-import{FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faHouse} from "@fortawesome/free-solid-svg-icons";
 
-<FontAwesomeIcon icon = {faHouse} />
+- `@fortawesome/fontawesome-svg-core` -> Font Awesome core
+- `@fortawesome/free-solid-svg-icons` -> solid SVG icons
+- `@fortawesome/react-fontawesome` -> React component
+
+### Example usage:
+```tsx
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
+
+<FontAwesomeIcon icon={faHouse} />
 ```
