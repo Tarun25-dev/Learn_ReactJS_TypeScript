@@ -324,6 +324,9 @@ function Child({ onClick, count }) {
   return <button onClick={onClick}>Count: {count}</button>;
 }
 ```
+- Without useCallback, the handleClick function would be recreated every render.
+- That may cause child components to re-render even when their props did not actually change.
+
 # React Routes
 
 ## What is a Route?
