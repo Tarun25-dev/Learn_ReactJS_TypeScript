@@ -333,7 +333,7 @@ Use useCallback when:
 - You are optimizing performance
 
 ### useLayoutEffect
-
+Runs synchronously after DOM updates; useful for measuring layout before the browser paints.
 
 
 # React Routes
