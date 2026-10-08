@@ -297,6 +297,12 @@ This is useful when:
 - Passing functions to child components
 - Preventing unnecessary re-renders
 - Optimizing performance in components with heavy child updates
+- Syntax:
+```tsx
+const memoizedFunction = useCallback(() => {
+  doSomething(value);
+}, [value]);
+```
 
 # React Routes
 
