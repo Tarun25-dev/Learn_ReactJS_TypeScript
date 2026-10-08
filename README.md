@@ -290,6 +290,10 @@ function ProductList({ products }) {
 
 - Use `useMemo` when the calculation is expensive, but avoid using it for every small value because it can add unnecessary complexity.
 
+### useCallback
+useCallback is a React Hook used to memoize a function so it does not get recreated on every render unless its dependencies change.
+
+
 # React Routes
 
 ## What is a Route?
