@@ -328,7 +328,9 @@ function Child({ onClick, count }) {
 - That may cause child components to re-render even when their props did not actually change.
 
 Use useCallback when:
-- 
+- A function is passed as a prop to a memoized component
+- You want to keep function identity stable
+- You are optimizing performance
 
 
 # React Routes
