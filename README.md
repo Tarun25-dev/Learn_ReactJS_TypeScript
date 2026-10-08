@@ -293,6 +293,10 @@ function ProductList({ products }) {
 ### useCallback
 useCallback is a React Hook used to memoize a function so it does not get recreated on every render unless its dependencies change.
 
+This is useful when:
+- Passing functions to child components
+- Preventing unnecessary re-renders
+- Optimizing performance in components with heavy child updates
 
 # React Routes
 
