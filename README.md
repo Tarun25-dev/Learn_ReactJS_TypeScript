@@ -303,7 +303,27 @@ const memoizedFunction = useCallback(() => {
   doSomething(value);
 }, [value]);
 ```
+- The function is recreated only when one of the dependencies changes.
+- If the dependency array stays the same, React reuses the previous function reference.
+- Example: Preventing re-creation of a function
+```tsx
+import { useCallback, useState } from "react";
 
+function Parent() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = useCallback(() => {
+    console.log("Button clicked");
+  }, []);
+
+  return <Child onClick={handleClick} count={count} />;
+}
+
+function Child({ onClick, count }) {
+  console.log("Child rendered");
+  return <button onClick={onClick}>Count: {count}</button>;
+}
+```
 # React Routes
 
 ## What is a Route?
