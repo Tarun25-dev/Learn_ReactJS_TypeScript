@@ -332,6 +332,9 @@ Use useCallback when:
 - You want to keep function identity stable
 - You are optimizing performance
 
+### useLayoutEffect
+
+
 
 # React Routes
 
