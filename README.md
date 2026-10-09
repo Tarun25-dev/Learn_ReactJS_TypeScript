@@ -335,6 +335,12 @@ Use useCallback when:
 ### useLayoutEffect
 Runs synchronously after DOM updates; useful for measuring layout before the browser paints.
 
+syntax:
+```tsx
+import {useLayoutEffect} from "react";
+
+```
+
 # React Routes
 
 ## What is a Route?
