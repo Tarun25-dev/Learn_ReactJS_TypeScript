@@ -339,6 +339,12 @@ syntax:
 ```tsx
 import {useLayoutEffect} from "react";
 
+useLayoutEffect(() => {
+  // code to execute
+  return () => {
+  // cleanup code Optional
+  }
+}, [dependencies]);
 ```
 
 # React Routes
