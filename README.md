@@ -346,7 +346,23 @@ useLayoutEffect(() => {
   }
 }, [dependencies]);
 ```
+### useInsertionEffect
 
+useInsertionEffect is a React Hook used to insert CSS styles into the DOM before React performs layout effects. It is mainly designed for CSS-in-JS library authors, not for everyday component logic.
+
+Syntax:
+
+```tsx
+import { useInsertionEffect } from "react";
+
+useInsertionEffect(() => {
+  // Insert CSS styles here
+
+  return () => {
+    // Clean up inserted styles
+  };
+}, [dependencies]);
+```
 # React Routes
 
 ## What is a Route?
