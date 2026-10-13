@@ -477,5 +477,9 @@ Step 5: Other screens get updated
 #### Install the required packages:
 
 ```tsx
+# Backend
+npm install socket.io
 
+# Frontend
+npm install socket.io-client
 ```
