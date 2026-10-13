@@ -463,107 +463,12 @@ Step 5: Other screens get updated
 
 **WebSocket vs Socket.IO**
 - These terms are related, but they are not the same.
-|   |
-| - |
 
-Feature
-
-|   |
-| - |
-
-WebSocket
-
-|   |
-| - |
-
-Socket.IO
-
-|   |
-| - |
-
-What is it?
-
-|   |
-| - |
-
-Communication protocol
-
-|   |
-| - |
-
-Real-time communication library
-
-|   |
-| - |
-
-Events such as `new-order`
-
-|   |
-| - |
-
-You implement your own message format
-
-|   |
-| - |
-
-Built-in event-based API
-
-|   |
-| - |
-
-Automatic reconnection
-
-|   |
-| - |
-
-You implement it
-
-|   |
-| - |
-
-Supported by the client
-
-|   |
-| - |
-
-Rooms for kitchen/staff
-
-|   |
-| - |
-
-You implement them yourself
-
-|   |
-| - |
-
-Built-in rooms
-
-|   |
-| - |
-
-Communication
-
-|   |
-| - |
-
-Two-way
-
-|   |
-| - |
-
-Two-way
-
-|   |
-| - |
-
-Uses WebSocket exclusively?
-
-|   |
-| - |
-
-Yes
-
-|   |
-| - |
-
-No; can use HTTP long-polling too in md table
+| Feature | WebSocket | Socket.IO |
+|---|---|---|
+| What is it? | Communication protocol | Real-time communication library |
+| Events such as `new-order` | You implement your own message format | Built-in event-based API |
+| Automatic reconnection | You implement it | Supported by the client |
+| Rooms for kitchen/staff | You implement them yourself | Built-in rooms |
+| Communication | Two-way | Two-way |
+| Uses WebSocket exclusively? | Yes | No; can use HTTP long-polling too |
