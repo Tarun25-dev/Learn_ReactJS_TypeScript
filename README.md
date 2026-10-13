@@ -461,6 +461,8 @@ Step 4: Backend receives the event
 Step 5: Other screens get updated
 - The server emits an event to the kitchen display system (KDS), so the kitchen staff can see the new order immediately without refreshing the page.
 
+**Remember:** WebSocket is a communication channel, not a database. Your backend can use a database to store orders and WebSocket to notify connected clients when an order changes.
+
 **WebSocket vs Socket.IO**
 - These terms are related, but they are not the same.
 
