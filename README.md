@@ -435,3 +435,26 @@ import { faHouse } from "@fortawesome/free-solid-svg-icons";
 - Ex: when you send a msg on a chat application, you want the other person to receive it immediately without refreshing the page. WebSocket helps make that possible.
 
 #### How Does WebSocket work?
+
+Step 1: Establish a connection
+- The React frontend connects to your Node.js/Express server using Socket.IO.
+```tsx
+const socket = io("http://localhost:4000");
+```
+Step 2: Connection is established
+- The server accepts the connection. Socket.IO usually starts with an HTTP-based handshake and may upgrade to WebSocket transport.
+
+Step 3: Customer places an order
+- The frontend sends an event containing the order details.
+```tsx
+socket.emit("new-order", {
+  table: "T12",
+  item: "Chicken Biryani",
+  quantity: 2
+});
+```
+Step 4: Backend receives the event
+- Your Express server listens for the "new-order" event and can validate and save the order in MongoDB.
+
+Step 5: Other screens get updated
+- The server emits an event to the kitchen display system (KDS), so the kitchen staff can see the new order immediately without refreshing the page.
