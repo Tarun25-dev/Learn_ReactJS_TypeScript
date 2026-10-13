@@ -472,3 +472,10 @@ Step 5: Other screens get updated
 | Rooms for kitchen/staff | You implement them yourself | Built-in rooms. |
 | Communication | Two-way | Two-way |
 | Uses WebSocket exclusively? | Yes | No; can use HTTP long-polling too. |
+
+
+#### Install the required packages:
+
+```tsx
+
+```
