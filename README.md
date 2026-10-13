@@ -436,6 +436,8 @@ import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 #### How Does WebSocket work?
 
+Imagine a customer places an order at table T12 in DineFlow.
+
 Step 1: Establish a connection
 - The React frontend connects to your Node.js/Express server using Socket.IO.
 ```tsx
