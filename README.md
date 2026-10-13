@@ -430,6 +430,8 @@ import { faHouse } from "@fortawesome/free-solid-svg-icons";
 ### WebSocket
 
 - WebSocket is a communication technology that allows a client and a server to exchange data in real time through a single, long-lived connection.
+- Persistent, two-way connection
+- The connection stays open, so either side can send data whenever needed, without starting a new HTTP request for every message.
 - Ex: when you send a msg on a chat application, you want the other person to receive it immediately without refreshing the page. WebSocket helps make that possible.
 
 #### How Does WebSocket work?
