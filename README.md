@@ -550,5 +550,5 @@ const order = await Order.findOne({
 - install mongoose with npm:
 
 ```tsx
-
+npm install mongoose
 ```
