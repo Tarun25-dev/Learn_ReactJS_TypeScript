@@ -543,4 +543,5 @@ const order = await Order.findOne({
 |Can be used though database drivers|uses a mongoDB driver internally|
 
 - Remember this simple analogy:
+- MongoDB = a storage room where your data lives.
 - 
