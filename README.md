@@ -523,5 +523,5 @@ const newOrder = await Order.create({
 ```
 - Retrive all orders
 ```tsx
-
+const orders = await Order.find();
 ```
