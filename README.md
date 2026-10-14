@@ -525,3 +525,7 @@ const newOrder = await Order.create({
 ```tsx
 const orders = await Order.find();
 ```
+- Find one order
+```tsx
+
+```
