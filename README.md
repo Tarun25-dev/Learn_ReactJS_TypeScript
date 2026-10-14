@@ -490,3 +490,8 @@ npm install socket.io-client
 
 - Mongoose is a library for node.js, mongoose helps backend communicate with MongoDB.
 - Without a defined data structure, you would need to handle the expected fields and validation yourself. Mongoose lets you define a schema, which specifies how your data should look.
+
+#### Example:
+```tsx
+
+```
