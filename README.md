@@ -486,3 +486,6 @@ npm install socket.io
 npm install socket.io-client
 ```
 
+### Mongoose
+
+- Mongoose is a library for node.js, mongoose helps backend communicate with MongoDB.
