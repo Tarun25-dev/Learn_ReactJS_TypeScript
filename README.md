@@ -527,5 +527,7 @@ const orders = await Order.find();
 ```
 - Find one order
 ```tsx
-
+const order = await Order.findOne({
+  customerName: "Tarun",
+});
 ```
