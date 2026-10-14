@@ -508,3 +508,5 @@ const Order = mongoose.model("Order", orderSchema);
 - customerName: String: customerName must be a string.
 - price: Number: Price is number.
 - mongoose.model(): Creates a model used to work with order documents.
+
+#### How to save and retrive data
