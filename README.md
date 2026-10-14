@@ -493,5 +493,14 @@ npm install socket.io-client
 
 #### Example:
 ```tsx
+import mongoose from "mongoose";
 
+const orderSchema = new mongoose.Schema({
+  customerName: String,
+  foodName: String,
+  price: Number,
+  quantity: Number,
+});
+
+const Order = mongoose.model("Order", orderSchema);
 ```
