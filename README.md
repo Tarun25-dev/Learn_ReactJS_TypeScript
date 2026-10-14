@@ -531,5 +531,10 @@ const order = await Order.findOne({
   customerName: "Tarun",
 });
 ```
+- Mongoose handles the database operations behind these methods.
 
-#### 
+#### MongoDB VS Mongoose
+
+|MongoDB|Mongoose|
+|-------|--------|
+|       |         |
