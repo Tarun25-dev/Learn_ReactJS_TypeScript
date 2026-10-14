@@ -537,4 +537,5 @@ const order = await Order.findOne({
 
 |MongoDB|Mongoose|
 |-------|--------|
-|       |         |
+|The database|A node.js library|
+|Stores your application data|Helps with backend works with the data.|
