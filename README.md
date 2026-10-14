@@ -521,3 +521,7 @@ const newOrder = await Order.create({
   quantity: 2,
 });
 ```
+- Retrive all orders
+```tsx
+
+```
