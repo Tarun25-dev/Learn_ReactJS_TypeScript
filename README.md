@@ -538,4 +538,6 @@ const order = await Order.findOne({
 |MongoDB|Mongoose|
 |-------|--------|
 |The database|A node.js library|
-|Stores your application data|Helps with backend works with the data.|
+|Stores your application data|Helps with backend works with the data|
+|Stores documents in collections|Provides Schemas and modals|
+|Can be used though database drivers|uses a mongoDB driver internally|
