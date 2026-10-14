@@ -510,3 +510,9 @@ const Order = mongoose.model("Order", orderSchema);
 - mongoose.model(): Creates a model used to work with order documents.
 
 #### How to save and retrive data
+
+- Once you have created the Order model, you can use it to interact with MongoDB.
+- save an order:
+```tsx
+
+```
