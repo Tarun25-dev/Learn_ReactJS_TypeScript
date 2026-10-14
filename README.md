@@ -514,5 +514,10 @@ const Order = mongoose.model("Order", orderSchema);
 - Once you have created the Order model, you can use it to interact with MongoDB.
 - save an order:
 ```tsx
-
+const newOrder = await Order.create({
+  customerName: "Tarun",
+  foodName: "Chicken Biryani",
+  price: 250,
+  quantity: 2,
+});
 ```
