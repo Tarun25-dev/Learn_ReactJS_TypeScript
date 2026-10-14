@@ -541,3 +541,6 @@ const order = await Order.findOne({
 |Stores your application data|Helps with backend works with the data|
 |Stores documents in collections|Provides Schemas and modals|
 |Can be used though database drivers|uses a mongoDB driver internally|
+
+- Remember this simple analogy:
+- 
