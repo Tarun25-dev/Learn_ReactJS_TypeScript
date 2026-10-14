@@ -544,4 +544,4 @@ const order = await Order.findOne({
 
 - Remember this simple analogy:
 - MongoDB = a storage room where your data lives.
-- 
+- Mongoose = a manager that helps organize and access the stored data.
