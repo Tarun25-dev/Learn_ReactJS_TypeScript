@@ -552,3 +552,4 @@ const order = await Order.findOne({
 ```tsx
 npm install mongoose
 ```
+- Make sure npm is installed in your system.
