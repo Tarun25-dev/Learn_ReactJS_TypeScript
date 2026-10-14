@@ -547,7 +547,7 @@ const order = await Order.findOne({
 - Mongoose = a manager that helps organize and access the stored data.
 - Express = the receptionist who receives requests from the frontend.
 
-- install it with npm:
+- install mongoose with npm:
 
 ```tsx
 
