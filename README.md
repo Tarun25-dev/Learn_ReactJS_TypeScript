@@ -1,6 +1,6 @@
 # What is React?
 - React is a JavaScript frontend library for building user interfaces, especially for web applications. It is fast, interactive, and supports reusable UI components.
-- It was created by Jordan Walke at Facebook and officially released in May 2013.
+- It was created by **Jordan Walke** at Facebook and officially released in May 2013.
 
 ### Key features:
 - Components
