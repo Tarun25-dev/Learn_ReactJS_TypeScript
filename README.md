@@ -557,4 +557,4 @@ npm install mongoose
 
 #### What is Express.js?
 - Express.js is a web framework for Node.js used to build web servers and APIs easily.
-- 
+- It helps handle HTTP requests, send responses, and connect the backend to databases like MongoDB.
