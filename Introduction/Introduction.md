@@ -23,4 +23,4 @@ React is a javascript library for building user interfaces, especially web appli
 - Today: React is maintained by Meta and the open-source community.
 
 **What is TypeScript?**
-- 
+- TypeScript is a programming language developed by Microsoft and created by Anders Hejlsberg.
