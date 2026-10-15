@@ -21,3 +21,6 @@ React is a javascript library for building user interfaces, especially web appli
 - 2012: Facebook started using React internally.
 - 2013: Facebook publicly open-sourced React at JSConfUS.
 - Today: React is maintained by Meta and the open-source community.
+
+**What is TypeScript?**
+- 
