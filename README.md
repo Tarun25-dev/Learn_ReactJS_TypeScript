@@ -556,4 +556,5 @@ npm install mongoose
 - Make sure npm is installed in your system.
 
 #### What is Express.js?
+- Express.js is a web framework for Node.js used to build web servers and APIs easily.
 - 
