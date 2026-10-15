@@ -26,3 +26,4 @@ React is a javascript library for building user interfaces, especially web appli
 - TypeScript is a programming language developed by Microsoft and created by Anders Hejlsberg.
 - It was publicly introduced in October 2012 and extends JavaScript with static typing.
 - It helps developers find errors early and write more reliable code.
+- TypeScript code is converted into JavaScript before running in the browser or Node.js.
