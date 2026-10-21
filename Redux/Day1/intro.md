@@ -40,3 +40,10 @@ function App() {
   );
 }
 ```
+You can pass the state and its updater function to child components.
+
+This is called prop drilling.
+
+Prop drilling isn't inherently bad. It's perfectly fine for simple applications. But as the component tree grows, passing props through many layers can become difficult to maintain.
+
+That's one of the problems Redux can help solve.
