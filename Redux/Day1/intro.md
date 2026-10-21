@@ -5,3 +5,21 @@ Redux is a state management library that helps you manage and share application 
 - But what happens when multiple components need the same state?
 - Thats where problem begins.
 
+Let's understand the approaches.
+
+### Problem A: Each component manages its own state
+
+Suppose the Navbar has its own cart
+```tsx
+const [count, setCount] = useState(0);
+```
+And the CartPage has a separate state:
+```tsx
+const [cartItems, setCartItems] = useState([]);
+```
+These are independent pieces of state.
+If the user adds a product, the Navbar's count won't automatically update just because the CartPage's state changes.
+
+Why? Because they are managing different state variables.
+
+We need a way to keep shared data consistent.
