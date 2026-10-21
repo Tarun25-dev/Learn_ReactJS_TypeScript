@@ -23,3 +23,20 @@ If the user adds a product, the Navbar's count won't automatically update just b
 Why? Because they are managing different state variables.
 
 We need a way to keep shared data consistent.
+
+### Problem B: Passing props through many components
+
+React already provides a way to share data: props.
+
+```tsx
+function App() {
+  const [cartItems, setCartItems] = useState([]);
+
+  return (
+    <ProductList
+      cartItems={cartItems}
+      setCartItems={setCartItems}
+    />
+  );
+}
+```
