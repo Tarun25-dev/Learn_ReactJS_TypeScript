@@ -47,3 +47,10 @@ This is called prop drilling.
 Prop drilling isn't inherently bad. It's perfectly fine for simple applications. But as the component tree grows, passing props through many layers can become difficult to maintain.
 
 That's one of the problems Redux can help solve.
+
+### How Redux solves this problem?
+
+Redux introduces a central store where you can keep shared application state.
+
+Instead of manually passing the same state and updater functions through multiple component layers, components can access the shared state through Redux.
+
