@@ -66,3 +66,4 @@ It simplifies common Redux tasks and reduces the amount of code you need to writ
 
 ### Where should you use Redux?
 
+Redux is particularly useful when multiple parts of an application need access to shared state, especially when that state changes frequently or involves complex updates.
