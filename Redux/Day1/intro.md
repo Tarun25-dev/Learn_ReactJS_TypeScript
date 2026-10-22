@@ -55,3 +55,5 @@ Redux introduces a central store where you can keep shared application state.
 Instead of manually passing the same state and updater functions through multiple component layers, components can access the shared state through Redux.
 
 Think of the store as a central place that holds your application's shared data.
+
+### Why Redux Toolkit instead of classic Redux?
