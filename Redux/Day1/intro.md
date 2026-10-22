@@ -57,3 +57,9 @@ Instead of manually passing the same state and updater functions through multipl
 Think of the store as a central place that holds your application's shared data.
 
 ### Why Redux Toolkit instead of classic Redux?
+
+Since we're learning Redux Toolkit directly, let's understand its purpose.
+
+Redux Toolkit (RTK) is the officially recommended approach for writing Redux applications.
+
+It simplifies common Redux tasks and reduces the amount of code you need to write.
