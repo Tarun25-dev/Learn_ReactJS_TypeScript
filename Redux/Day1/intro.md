@@ -63,3 +63,6 @@ Since we're learning Redux Toolkit directly, let's understand its purpose.
 Redux Toolkit (RTK) is the officially recommended approach for writing Redux applications.
 
 It simplifies common Redux tasks and reduces the amount of code you need to write.
+
+### Where should you use Redux?
+
