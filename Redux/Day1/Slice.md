@@ -11,3 +11,9 @@
 |__products
 
 |__orders
+
+- If we put all the logic for these into one huge file, it would become to difficult to manage.
+- Instead, Redux Toolkit lets us divide the store into slices.
+- Like cart Slice, user Slice, products Slice, orders Slice, etc.
+
+- A Slice is basically a section of the Redux state along with the logic that controls the section.
