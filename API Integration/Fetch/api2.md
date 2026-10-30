@@ -201,3 +201,127 @@ updatePost();
 ```
 - The PUT request sends entire field you want to change.
 - The PATCH request sends only the field you want to change.
+
+### DELETE -- deleting data
+- Suppose an admin wants to remove a menu item.
+```ts
+async function deletePost(){
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts/1", {
+        method: "DELETE",
+    });
+    if(!response.ok) throw new Error("Failed to delete post");
+    console.log("Delete request successfull");
+}
+```
+- A successful DELETE request may return "204 No Content", which means there is no response body.
+- That's why you should't always call response.json() after every request.
+- If you want to see that 204 then "const data = await response.json(); console.log(data);"
+- After successfully deleting an item, you normally update your local list so the deleted item disappears from the UI.
+
+### HTTP headers and status codes
+**What are headers?**
+
+Headers carry additional information about a request or response.
+
+For example, an API might require an authentication token.
+
+```js
+const response = await fetch("https://example.com/api/profile", {
+    headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: "application/json",
+    },
+});
+```
+- Authorization sends a bearer token.
+- Accept tells the server that your client expects JSON.
+- The server must support the authentication scheme you're using.
+
+**Common HTTP status codes**
+|status|meaning|
+|------|-------|
+|200 ok|Request succeeded|
+|201 created|Resource created|
+|204 No Content|Succeeded without a response body|
+|400 Bad Request|Request is invalid|
+|401 Unauthorized|Authentication is missing or invalid|
+|403 Forbidden|Access is not permitted|
+|404 Not Found|Resource not found|
+|500 Internal Server Error|Server encountered an error|
+
+- These codes help you understand the result of an API request.
+- catch block handles thrown errors, including network failures and errors you deliberately throw for unsuccessful HTTP responses.
+
+### Connect API requests to React forms
+- Suppose you want a form where a user enters a post title and body and clicks create post.
+- The flow will be:
+```text
+User fills form
+⬇️
+React stores input values
+⬇️
+User Clicks Submit
+⬇️
+POST request using fetch()
+⬇️
+Server returns response
+⬇️
+Show success or error
+```
+
+```tsx
+interface Post{
+    id: number;
+    title: string;
+    body: string;
+    userId: number;
+}
+
+function App(){
+    const [title, setTitle] = useState("");
+    const [body, setBody] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
+
+    async function handleSubmit(event: React.SubmitEvent<HTMLFormElement>){
+        event.preventDefault();
+        setLoading(true);
+        setMessage("");
+        try{
+            const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    title,
+                    body,
+                    userId: 1,
+                }),
+            });
+            if(!response.ok){
+                throw new Error("Failed to create post");
+            }
+            const data: Post = await response.json();
+            setMessage(`Post created! ID: ${data.id}`);
+            setTitle("");
+            setBody("");
+        } catch (error){
+            setMessage(error instanceof Error ? error.message : "Something went wrong");
+        } finally {
+            setLoading(false);
+        }
+    }
+    return(
+        <div>
+            <h1>Create Post</h1>
+            <form onSubmit={handleSubmit}>
+                <input value={title} onChange={(event) => setTitle(event.target.value)} placeholder="Enter title" required />
+                <textarea value={body} onChange={(event) => setBody(event.taregt.value)} placeholder="Enter body" required />
+                <button type="submit" disabled={loading}>{loading ? "Submitting..." : "Create Post"}</button>
+                {message && <p>{message}</p>}
+            </form>
+        </div>
+    );
+}
+```
