@@ -119,7 +119,7 @@ Observe gap of spaces is 2
 */
 // If we dont know what are the properties of an object that we want to show on the ui then simpley use pre tag then we can see total object in ui or else we can see in console by console.log to know which properties exists.
 
-export default function App4(){
+export function App4(){
     const [post1, setPost1] = useState<unknown>(null);
 
     useEffect(() => {
@@ -144,5 +144,76 @@ export default function App4(){
         <>
         <pre>{JSON.stringify(post1, null, 2)}</pre>
         </>
+    );
+}
+
+export function App5(){
+    useEffect(() => {
+        async function deletePost(){
+            const response = await fetch("https://jsonplaceholder.typicode.com/posts/1", {
+                method: "DELETE",
+            });
+            if(!response.ok) throw new Error("Failed to delete post");
+            console.log("Delete request successful");
+        }
+        deletePost();
+    }, []);
+    return(
+        <>
+        <p>Delete post</p>
+        </>
+    );
+}
+
+interface Post{
+    id: number;
+    title: string;
+    body: string;
+    userId: number;
+}
+
+export default function App6(){
+    const [title, setTitle] = useState("");
+    const [body, setBody] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
+
+    async function handleSubmit(event: React.SubmitEvent<HTMLFormElement>){
+        event.preventDefault();
+        setLoading(true);
+        setMessage("");
+
+        try{
+            const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+                method: "POST",
+                headers: {
+                    "Context-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    title,
+                    body,
+                    userId: 1,
+                }),
+            });
+            if(!response.ok) throw new Error("Failed to create Post");
+            const data: Post = await response.json();
+            setMessage(`post created! ID:${data.id}`);
+            setTitle("");
+            setBody("");
+        } catch (error){
+            setMessage(error instanceof Error ? error.message : "Something went wrong!");
+        } finally{
+            setLoading(false);
+        }
+    }
+    return(
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input type="text" value={title} onChange={(event) => setTitle(event.target.value)} required placeholder="enter title" />
+                <textarea value={body} onChange={(event) => setBody(event.target.value)} required placeholder="enter body" />
+                <button type="submit" disabled={loading}>{loading ? "Submitting..." : "Create Post"}</button>
+                {message && <p>{message}</p>}
+            </form>
+        </div>
     );
 }
