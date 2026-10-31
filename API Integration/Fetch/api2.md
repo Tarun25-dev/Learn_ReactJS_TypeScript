@@ -325,3 +325,127 @@ function App(){
     );
 }
 ```
+
+### Build reusable API functions
+- As applications grow, writing the same fetch logic repeatedly becomes inconvenient.
+- Instead, create a reusable API helper.
+- For example, create src/api.ts:
+```ts
+const API_URL = "https://jsonplaceholder.typicode.com";
+
+export async function apiRequest<T>(
+    endpoint: string,
+    options: RequestInit = {}
+): Promise<T>{
+    const response = await fetch(`${API_URL}${endpoint}`, {
+    ...options,
+    headers: {
+        Accept: "application/json",
+        ...options.headers,
+    },
+    });
+    if(!response.ok) throw new Error(`Request failed:${response.status}`);
+    if(!response.status === 204) return undefined as T;
+
+    return (await response.json()) as T;
+}
+```
+- This function centralizes common behavior:
+- Builds the URL.
+- Makes the request.
+- Checks HTTP errors.
+- Handles empty 204 responses.
+- Parses JSON.
+- T is a generic type.
+
+**Use it for GET:**
+```ts
+interface Post{
+    id: number;
+    title: string;
+    body: string;
+    userId: number;
+}
+
+const posts = await apiRequest<Post[]>("/posts?userId=1");
+```
+
+**Use it for POST:**
+```ts
+const newPost = await apiRequest<Post>("/posts", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+        title: "Hello",
+        body: "Learning reusable API functions",
+        userId: 1,
+    }),
+});
+```
+
+**Use it for DELETE**
+```ts
+await apiRequest<void>("/posts/1", {
+    method: "DELETE",
+});
+```
+
+### Complete CRUD -- The real-world pattern 
+- Create - POST (Send a new item(resource) to the backend.)
+- Read - GET (Retrieve items from the backend.)
+- Update - UPT / PATCH (Change an existing item's information.)
+- Delete - DELETE (Request removal of an item.)
+
+### Fetch inside useEffect:
+- We already learned how to fetch data when a react component mounts. In real applications, you should also understand what happens if the component unmounts while the request is still running.
+- You can use AbortController to cancel an ongoing request.
+```ts
+useEffect(() => {
+    const controller = new AbortController();
+    async function getPosts(){
+        try {
+            const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+                signal: controller.signal
+            });
+            if(!response.ok){
+                throw new Error("Failed to fetch posts");
+            }
+            const data = await response.json();
+            setPosts(data);
+        } catch (error){
+            if(error instanceof Error && error.name === "AbortError"){
+                return;
+            }
+            console.error(error);
+        }
+    }
+    getPosts();
+    return () => {
+        controller.abort();
+    }
+}, []);
+```
+- AboutController creates a cancellation signal.
+- signal: connects that signal to the fetch request.
+- controller.abort() cancels the request when cleanup runs.
+- AbortError is handled seperately so normal cancellation isn't shown as an application failure.
+- This is useful when navigating between react routes or when a components no longer needs the result.
+
+### Common fetch mistakes
+
+|mistake|correct approach|
+|forgetting await response.json()|parse the response body and await it.|
+|Assuming 404 triggers catch|check response.ok|
+|Sending an object directly as body|Use JSON.stringify(object) for JSON requests.|
+|Forgetting the JSON content-type error| set "Content-Type": "application/json", when sending JSON.|
+|Parsing a 204 response as JSON|Handle empty responses seperately.|
+|Showing no loading indicator|Track loading with react state|
+|Ignoring network errors|use try catch|
+|Putting secret credentials in react|Keep secrets on the backend.|
+|Assuming a request updates automatically|update state or refetch the data.|
+
+**What about CORS?**
+- Sometimes a request works in an API testing tool but fails in your browser with a CORS error.
+- CORS(Cross-Origin Resource Sharing) is a browser security mechanism. The API server must allow requests from your frontends origin when CORS applies.
