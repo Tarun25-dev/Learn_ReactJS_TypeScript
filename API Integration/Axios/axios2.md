@@ -13,7 +13,7 @@ try{
 }
 ```
 
-2. The three kinds of Axios errors
+2. The three kinds of Axios errors:
 
 ```tsx
 try {
@@ -105,7 +105,7 @@ function App(){
 }
 ```
 
-5. Timeout
+5. Timeout:
 
 - If the server responds within the timeout limit, Axios receives the response.
 - If the server takes too long, Axios stops waiting and rejects the request with a timeout error.
