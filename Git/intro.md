@@ -5,3 +5,4 @@
 - **Learning curve:** GitHub commands can be difficult for beginners to understand.
 - **Larger files:** Git is not suitable for managing very larger files.
 - **Merge conflicts:** Conflicts can occur when multiple developer's modify the same code.
+- **Complex command:** Some git commands are difficult to remember and use.
