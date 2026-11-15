@@ -3,3 +3,4 @@
 
 # Limitations:
 - **Learning curve:** GitHub commands can be difficult for beginners to understand.
+- **Larger files:** Git is not suitable for managing very larger files.
