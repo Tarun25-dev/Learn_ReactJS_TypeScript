@@ -6,3 +6,5 @@
 - **Larger files:** Git is not suitable for managing very larger files.
 - **Merge conflicts:** Conflicts can occur when multiple developer's modify the same code.
 - **Complex command:** Some git commands are difficult to remember and use.
+- **No built-in user interface:** Git mainly works through command-line commands(although graphical tools are available).
+- 
