@@ -7,4 +7,4 @@
 - **Merge conflicts:** Conflicts can occur when multiple developer's modify the same code.
 - **Complex command:** Some git commands are difficult to remember and use.
 - **No built-in user interface:** Git mainly works through command-line commands(although graphical tools are available).
-- 
+- **Storage space:** Git stores project history, which can increase repository size over time.
