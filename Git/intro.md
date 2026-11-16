@@ -29,3 +29,9 @@
 |Credential helper|Git credential manager|
 |Extra options|Keep defaults|
 
+- And click Next through the remaining screens and then click install.
+- Verify installation, Open cmd and run `git --version`
+- If installed then shows something like this `git version 2.x.x.windows.x`
+- Configure your git identity, beacuse git needs to know who is making the commits:
+- Run `git config --global user.name "username" and git config --global user.email "yourmail@example.com"`
+- After that verify your configuration with `git config --global --list`
