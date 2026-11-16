@@ -14,6 +14,7 @@
 - Open the downloaded .exe file.
 - Install the git and installer will show several configuration screens.
 - For beginner, these are the recommended selections:
+
 |Installation option|select|
 |-------------------|------|
 |Components|keep defaults|
