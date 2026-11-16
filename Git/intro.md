@@ -10,5 +10,21 @@
 - **Storage space:** Git stores project history, which can increase repository size over time.
 
 # Installation and setup:
-- Downdload git from official site, for windows 64-bit use this https://git-scm.com/install/windows?utm_source=chatgpt.com
-- 
+- Downdload git from official site, for windows use this https://git-scm.com/install/windows
+- Open the downloaded .exe file.
+- Install the git and installer will show several configuration screens.
+- For beginner, these are the recommended selections:
+|Installation option|select|
+|-------------------|------|
+|Components|keep defaults|
+|Default editor|Visual studio code(if installed)|
+|Initial branch name|Override main|
+|PATH environment|Git from command line and also from 3rd party software|
+|SSH executable|Use bundled OpenSSH|
+|HTTPS transport|Use OpenSSL library|
+|Line endings|Checkout window style, commit unix-style|
+|Terminal emulator|Use minTTY|
+|Default behaviour of git pull|Default|
+|Credential helper|Git credential manager|
+|Extra options|Keep defaults|
+
