@@ -58,3 +58,11 @@ git add .
 git commit -m "updated project"
 git push
 ```
+
+**Git Pull:**
+- Git push is used to uploads your local commits to github.
+- Git pull downloads the lastet changes from github and integrates them into your local project.
+- Whenever github has a newer version than git then we use git pull.
+```bash
+git pull origin main
+```
