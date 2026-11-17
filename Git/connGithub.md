@@ -4,3 +4,8 @@ Lets do it step by step using vs code terminal:
 git config --global user.name "username"
 git config --global user.email "email@example.com"
 ```
+- These details identify you as the author of your commits.
+- Check your configuration:
+```bash
+git config --global --list
+```
