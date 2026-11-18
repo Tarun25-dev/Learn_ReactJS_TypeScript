@@ -44,3 +44,14 @@
 |`git merge branch-name`|Merge another branch into the current branch|
 |`git branch -d branch-name`|Delete a merged branch|
 
+5. **Undo and comparison commands:**
+
+|command|purpose|
+|-------|-------|
+|`git diff`|View unstaged changes|
+|`git restore filename`|Discard unstaged changes in a file|
+|`git restore --staged filename`|Unstage a file|
+|`git revert commit-id`|Reverse a previous commit with a new commit|
+|`git reset --soft HEAD~1`|Undo the last commit while keeping changes staged|
+|`git stash`|Temporarily save working changes|
+|`git stash`|Restore the latest stashed changes|
