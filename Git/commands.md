@@ -55,3 +55,11 @@
 |`git reset --soft HEAD~1`|Undo the last commit while keeping changes staged|
 |`git stash`|Temporarily save working changes|
 |`git stash`|Restore the latest stashed changes|
+
+6. **Important differences:**
+
+- Git vs Github: Git is a version control system; Github hosts Git repositories online.
+- Push vs Pull: Push uploads changes; Pull downloads and integrates changes.
+- Fetch vs Pull: Fetch downloads updates; Pull downloads and integrates them.
+- Merge vs Rebase: Merge combines branch histories; Rebase reapplies commits onto another base.
+- Reset vs Revert: Reset moves a branch reference; Revert creates a new commit to reverse changes.
