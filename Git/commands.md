@@ -32,3 +32,15 @@
 |`git push -u origin main`|Push and set upstream tracking|
 |`git pull origin main`|Download and integrate remote changes|
 |`git fetch`|Download remote updates without integrating them|
+
+4. **Branch commands:**
+
+|command|purpose|
+|-------|-------|
+|`git branch`|List local branches|
+|`git branch branch-name`|Create a branch|
+|`git switch branch-name`|Switch branches|
+|`git switch -c branch-name`|Create and switch to a new branch|
+|`git merge branch-name`|Merge another branch into the current branch|
+|`git branch -d branch-name`|Delete a merged branch|
+
