@@ -63,3 +63,14 @@
 - Fetch vs Pull: Fetch downloads updates; Pull downloads and integrates them.
 - Merge vs Rebase: Merge combines branch histories; Rebase reapplies commits onto another base.
 - Reset vs Revert: Reset moves a branch reference; Revert creates a new commit to reverse changes.
+
+7. **Most important daily workflow:**
+```bash
+git status
+
+git add .
+
+git commit -m "Updated project"
+
+git push
+```
