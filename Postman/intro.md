@@ -19,3 +19,23 @@ Postman is a tool used to test APIs by sending HTTP requests like GET, POST, PUT
 - Click the Extensions icon(ctrl + shift + X).
 - Search for Postman.
 - Install the official postman extension published by postman.
+
+**Step2. Sign in:**
+- Open the Postman extension from the sidebar.
+- Click Sign in.
+- Your browser will opne.
+- Create a free Postman account or sign in with an existing account.
+- Return to VS code.
+- Sign in is required to use the extension.
+
+**Step3. Create your first API request:**
+- Open the postman extension.
+- Select your workspace.
+- Create a new HTTP request.
+- Enter the URL: https://jsonplaceholder.typicode.com/users
+- Select GET
+- Click Send
+- You should receive a JSON response containing user details.
+
+**Step4. Test your Express server:**
+- Now test your own backend
