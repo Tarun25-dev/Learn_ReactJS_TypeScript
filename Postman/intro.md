@@ -38,4 +38,14 @@ Postman is a tool used to test APIs by sending HTTP requests like GET, POST, PUT
 - You should receive a JSON response containing user details.
 
 **Step4. Test your Express server:**
-- Now test your own backend
+- Now test your own backend.
+- Start your express server in the VS code terminal: `npm run dev`.
+- Suppose your express server runs on port 5000 and has this route:
+```js
+app.get("/users", (req, res) => {
+  res.json({message: "Users fetched successfully"});
+});
+```
+- In postman enter: http://localhost:5000/users
+- Select GET and click send.
+- Expected response in json like { "message": "Users fetched successfully" }
