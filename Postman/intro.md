@@ -48,6 +48,6 @@ app.get("/users", (req, res) => {
   res.json({message: "Users fetched successfully"});
 });
 ```
-- In postman enter: http://localhost:5000/users
+- In postman, enter: http://localhost:5000/users
 - Select GET and click send.
 - Expected response in json like { "message": "Users fetched successfully" }
