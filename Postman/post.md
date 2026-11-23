@@ -1,4 +1,4 @@
-# Sending a response (data) to server (express):
+# Sending a POST request (data) to an Express server
 
 - Run your backend server `npm run dev`.
 - Open postman extension on the sidebar in VS code.
