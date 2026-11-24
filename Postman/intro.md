@@ -11,6 +11,10 @@ Postman is a tool used to test APIs by sending HTTP requests like GET, POST, PUT
 # Why do we need Postman?
 
 - To test APIs without creating a frontend.
+- To send HTTP request to a server.
+- To check server responses.
+- To  identify errors in API requests.
+- To inspect response status codes, headers and response bodies.
 
 # Setup Postman:
 
