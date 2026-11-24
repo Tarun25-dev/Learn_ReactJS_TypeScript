@@ -59,3 +59,9 @@ app.get("/users", (req, res) => {
 - In postman, enter: http://localhost:5000/users
 - Select GET and click send.
 - Expected response in json like { "message": "Users fetched successfully" }
+
+**Remember:** 
+- Localhost refers to your local computer.
+- 5000 is the port where your express server is running.
+- /users is an api endpoint.
+- Postman sends the requests and express handles it and returns the response.
