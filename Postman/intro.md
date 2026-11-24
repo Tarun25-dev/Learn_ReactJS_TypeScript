@@ -65,3 +65,7 @@ app.get("/users", (req, res) => {
 - 5000 is the port where your express server is running.
 - /users is an api endpoint.
 - Postman sends the requests and express handles it and returns the response.
+
+**Conclusion:**
+
+Postman allows us to test backend APIs independently without depending on a frontend application.
